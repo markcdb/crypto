@@ -13,8 +13,9 @@ enum HTTPMethod: String {
 
 protocol Requestor: AnyObject {
     func fetchData<T: Decodable>(from urlString: String,
-                   method: HTTPMethod,
-                   completion: @escaping (T?, Error?) -> Void)
+                                 method: HTTPMethod,
+                                 cacheKey: String,
+                                 completion: @escaping (T?, Error?) -> Void)
     
     func cancelFetch()
     func resumeFetch()
@@ -28,6 +29,7 @@ class NetworkManager: ObservableObject, Requestor {
     
     func fetchData<T>(from urlString: String,
                       method: HTTPMethod,
+                      cacheKey: String = "",
                       completion: @escaping (T?, Error?) -> Void) where T : Decodable {
         
         guard let url = URL(string: urlString) else { return }
@@ -37,12 +39,20 @@ class NetworkManager: ObservableObject, Requestor {
         
         dataTask = urlSession.dataTask(with: urlRequest) {[weak self] data, _, error in
             guard let self = self else {
-                completion(nil, nil)
                 return
             }
             
             let response: APIResponse<T>? = try? self.decoder.decode(data: data)
             completion(response?.data, error)
+            
+            /**
+             There are multiple ways to cache data:
+             1. Using cachesDirectory
+             2. Coredata
+             3. UserDefaults
+             For now we're choosing user default, though it's not as lightweight as using cache directory, for the simpleness of this cache requirement we'll choose using this for now
+             */
+            UserDefaults.standard.set(data, forKey: cacheKey)
         }
         
         dataTask?.resume()

@@ -31,6 +31,8 @@ enum ViewModelState<T>: Equatable {
 @MainActor class CryptoViewmodel: ObservableObject {
     let repository: CryptoRepository
     @Published var state: ViewModelState<[Coin]> = .none
+    var searchString: String = ""
+    @Published var searchedCoin: [Coin] = []
     
     init(cryptoRepository: CryptoRepository) {
         self.repository = cryptoRepository        
@@ -38,6 +40,24 @@ enum ViewModelState<T>: Equatable {
     
     func reloadCoinsWith(_ currency: String) {
         repository.getCoinsPricesFrom(currency: currency)
+    }
+    
+    func searchWith(_ key: String) {
+        //Get the state first
+        var coins: [Coin] = []
+        
+        switch state {
+        case .failed(let cns), .success(let cns):
+            coins = cns
+        default: break
+        }
+        
+        searchedCoin = coins.filter({ $0.name.lowercased().contains(key.lowercased()) })
+    }
+    
+    func cleanupSearch() {
+        searchString = ""
+        searchedCoin = []
     }
 }
 

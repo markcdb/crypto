@@ -15,22 +15,37 @@ protocol CryptoResponseDelegate: AnyObject {
 
 class CryptoRepository {
     
-    let cryptoService: CryptoNetworkRequest
+    let cacheKey = "com.crypto.coinCache"
+    
+    let decoder = JSONKeySnakeCaseDecoder()
+    let cryptoService: CryptoService
     weak var delegate: CryptoResponseDelegate?
     
-    init(cryptoService: CryptoNetworkRequest) {
+    init(cryptoService: CryptoService) {
         self.cryptoService = cryptoService
     }
     
     func getCoinsPricesFrom(currency: String) {
-        cryptoService.getPricesFrom(currency) {[weak self] coins in
+        cryptoService.getPricesFrom(currency, cacheKey: cacheKey) {[weak self] coins in
             guard let self = self else { return }
-            self.delegate?.didReceive(coins: coins)
-            //Handle cache
+            
+            DispatchQueue.main.async {
+                self.delegate?.didReceive(coins: coins)
+            }
         } failed: {[weak self] in
             guard let self = self else { return }
             //Check for cache first
-            self.delegate?.didFailed(cachedCoins: [])
+            
+            var coins: [Coin] = []
+            
+            if let data = UserDefaults.standard.data(forKey: self.cacheKey),
+               let response: APIResponse<[Coin]>? = try? self.decoder.decode(data: data){
+                coins = response?.data ?? []
+            }
+            
+            DispatchQueue.main.async {
+                self.delegate?.didFailed(cachedCoins: coins)
+            }
         }
     }
 }

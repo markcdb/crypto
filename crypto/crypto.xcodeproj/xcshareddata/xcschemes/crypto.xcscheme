@@ -51,6 +51,28 @@
                ReferencedContainer = "container:crypto.xcodeproj">
             </BuildableReference>
          </TestableReference>
+         <TestableReference
+            skipped = "NO"
+            parallelizable = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "8AC71BEA2955AB6F000BD505"
+               BuildableName = "CryptoViewTests.xctest"
+               BlueprintName = "CryptoViewTests"
+               ReferencedContainer = "container:crypto.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO"
+            parallelizable = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "8AC71C0B2955AB97000BD505"
+               BuildableName = "CryptoSDKTests.xctest"
+               BlueprintName = "CryptoSDKTests"
+               ReferencedContainer = "container:crypto.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction

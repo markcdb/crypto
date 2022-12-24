@@ -9,12 +9,19 @@ import Foundation
 import Combine
 import XCTest
 
-class Constants {
+struct Constants {
     
     static let fileName = "mock_price"
 }
 
 extension XCTestCase {
+    
+    /**
+     Waits our published object to have some changes,
+     we will then check the update data if it's equal to the expected value
+     
+     Timeout: 10s
+     */
     func waitUntil<T: Equatable>(
         _ propertyPublisher: Published<T>.Publisher,
         equals expectedValue: T,

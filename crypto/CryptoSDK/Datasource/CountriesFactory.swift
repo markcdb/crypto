@@ -7,16 +7,16 @@
 
 import Foundation
 
-class Countries {
+public class Countries {
     
-    struct Country {
-        let name: String
-        let currencyCode: String
-        let flag: String
+    public struct Country {
+        public let name: String
+        public let currencyCode: String
+        public let flag: String
     }
     
     public static let shared = Countries()
-    var countries: [Country] = []
+    public var countries: [Country] = []
     
     private init() {}
     
@@ -44,11 +44,11 @@ class Countries {
      ```
      Alternative is to have list of all countries and currency in one json file and convert that into object since it's a static data. Due to API limitation we'll default to **SGD and USD** for now
     */
-    func createCountries() {
-        let countrySGD = Country(name: "Singapore", currencyCode: "SGD", flag: "🇸🇬")
+    public func createCountries() {
         let countryUSD = Country(name: "United States", currencyCode: "USD", flag: "🇺🇸")
+        let countrySGD = Country(name: "Singapore", currencyCode: "SGD", flag: "🇸🇬")
         
-        countries.append(countrySGD)
         countries.append(countryUSD)
+        countries.append(countrySGD)
     }
 }

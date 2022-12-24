@@ -7,17 +7,16 @@
 
 import Foundation
 
-protocol CryptoResponseDelegate: AnyObject {
+public protocol CryptoResponseDelegate: AnyObject {
     
     func didReceive(coins: [Coin])
     func didFailed(cachedCoins: [Coin])
 }
 
-class CryptoRepository {
+public class CryptoRepository {
     
     let cacheKey = "com.crypto.coinCache"
     
-    let decoder = JSONKeySnakeCaseDecoder()
     let cryptoService: CryptoService
     weak var delegate: CryptoResponseDelegate?
     
@@ -26,25 +25,17 @@ class CryptoRepository {
     }
     
     func getCoinsPricesFrom(currency: String) {
-        cryptoService.getPricesFrom(currency, cacheKey: cacheKey) {[weak self] coins in
+        cryptoService.getPricesFrom(currency, cacheKey: cacheKey) {[weak self] response in
             guard let self = self else { return }
             
             DispatchQueue.main.async {
-                self.delegate?.didReceive(coins: coins)
+                self.delegate?.didReceive(coins: response.data)
             }
-        } failed: {[weak self] in
+        } failed: {[weak self] response in
             guard let self = self else { return }
-            //Check for cache first
-            
-            var coins: [Coin] = []
-            
-            if let data = UserDefaults.standard.data(forKey: self.cacheKey),
-               let response: APIResponse<[Coin]>? = try? self.decoder.decode(data: data){
-                coins = response?.data ?? []
-            }
             
             DispatchQueue.main.async {
-                self.delegate?.didFailed(cachedCoins: coins)
+                self.delegate?.didFailed(cachedCoins: response?.data ?? [])
             }
         }
     }

@@ -6,19 +6,20 @@
 //
 
 import SwiftUI
+import CryptoSDK
 
 @main
 struct cryptoApp: App {
     
     @Environment(\.scenePhase) private var scenePhase
-    
+    @ObservedObject var viewModel = CryptoBuilder.assemlbleViewmodelWithRequestor()
     init() {
         Countries.shared.createCountries()
     }
     
     var body: some Scene {
         WindowGroup {
-            MainView()
+            CryptoListView(viewModel: self.viewModel)
         }
         .onChange(of: scenePhase) { phase in
             switch phase {

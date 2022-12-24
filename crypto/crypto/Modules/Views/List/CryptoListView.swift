@@ -68,7 +68,6 @@ struct CryptoListView: View {
                     List($viewModel.searchedCoin, id:\.name) { coin in
                         CryptoCoinView(coin: coin.wrappedValue)
                     }.listStyle(PlainListStyle())
-                        .accessibilityIdentifier("list-search")
                 }
             }
             .frame(minWidth: 0,

@@ -10,13 +10,8 @@ import XCTest
 struct Identifiers {
     
     static let picker = "picker-currency"
-    static let filterCoin = "filter-coin"
-    static let filterBuy = "filter-buy"
-    static let filterSell = "filter-sell"
     static let list = "list-coin"
-    static let listSearch = "list-search"
-    static let cell = "cell-coin"
-    static let cellSearch = "cell-search-coin"
+    static let cell = "coin-bsae"
 }
 
 final class cryptoUITests: XCTestCase {
@@ -45,7 +40,7 @@ final class cryptoUITests: XCTestCase {
         XCTAssertTrue(list.waitForExistence(timeout: 5))
         
         //Check if list view has rows
-        let cell = app.cells.staticTexts["coin-bsae"]
+        let cell = app.cells.staticTexts[Identifiers.cell]
         XCTAssertTrue(cell.waitForExistence(timeout: 5))
         XCTAssertTrue(cell.firstMatch.label == "1INCH")
 
@@ -61,7 +56,7 @@ final class cryptoUITests: XCTestCase {
         XCTAssertTrue(list.waitForExistence(timeout: 5))
         
         ///Check if list view has rows
-        let cell = app.cells.staticTexts["coin-bsae"]
+        let cell = app.cells.staticTexts[Identifiers.cell]
         XCTAssertTrue(cell.waitForExistence(timeout: 5))
         XCTAssertTrue(cell.firstMatch.label == "1INCH")
 
@@ -84,7 +79,7 @@ final class cryptoUITests: XCTestCase {
         XCTAssertTrue(list.waitForExistence(timeout: 5))
         
         //Check if list view has rows
-        let cell = app.cells.staticTexts["coin-bsae"]
+        let cell = app.cells.staticTexts[Identifiers.cell]
         XCTAssertTrue(cell.waitForExistence(timeout: 5))
         XCTAssertTrue(cell.firstMatch.label == "1INCH")
 
@@ -107,7 +102,7 @@ final class cryptoUITests: XCTestCase {
         XCTAssertTrue(list.waitForExistence(timeout: 5))
         
         //Check if list view has rows
-        let cell = app.cells.staticTexts["coin-bsae"]
+        let cell = app.cells.staticTexts[Identifiers.cell]
         XCTAssertTrue(cell.waitForExistence(timeout: 5))
         XCTAssertTrue(cell.firstMatch.label == "1INCH")
 
@@ -130,7 +125,7 @@ final class cryptoUITests: XCTestCase {
         XCTAssertTrue(list.waitForExistence(timeout: 5))
         
         //Check if list view has rows
-        let cell = app.cells.staticTexts["coin-bsae"]
+        let cell = app.cells.staticTexts[Identifiers.cell]
         XCTAssertTrue(cell.waitForExistence(timeout: 5))
         XCTAssertTrue(cell.firstMatch.label == "1INCH")
 
@@ -161,7 +156,7 @@ final class cryptoUITests: XCTestCase {
         XCTAssertTrue(list.waitForExistence(timeout: 5))
         
         //Check if list view has rows
-        let cell = app.cells.staticTexts["coin-bsae"]
+        let cell = app.cells.staticTexts[Identifiers.cell]
         XCTAssertTrue(cell.waitForExistence(timeout: 5))
         XCTAssertTrue(cell.firstMatch.label == "1INCH")
 

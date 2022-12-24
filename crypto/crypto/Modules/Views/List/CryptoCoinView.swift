@@ -20,6 +20,7 @@ struct CryptoCoinView: View {
                         Text(coin.base)
                             .font(Fonts.header)
                             .minimumScaleFactor(0.5)
+                            .accessibilityIdentifier("coin-bsae")
                         Text(coin.name)
                             .lineLimit(2)
                             .font(Fonts.subHeader)

@@ -12,9 +12,16 @@ import CryptoSDK
 struct cryptoApp: App {
     
     @Environment(\.scenePhase) private var scenePhase
-    @ObservedObject var viewModel = CryptoBuilder.assemlbleViewmodelWithRequestor()
+    @ObservedObject var viewModel: CryptoViewmodel
+    
     init() {
         Countries.shared.createCountries()
+
+        if ProcessInfo.processInfo.arguments.contains("uiMock") {
+            viewModel = CryptoBuilder.assemlbleViewmodelWithRequestor(MockCryptoNetworkRequest())
+        } else {
+            viewModel = CryptoBuilder.assemlbleViewmodelWithRequestor()
+        }
     }
     
     var body: some Scene {

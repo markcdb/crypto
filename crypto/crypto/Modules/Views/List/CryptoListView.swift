@@ -21,6 +21,7 @@ struct CryptoListView: View {
                         Text(country.currencyCode)
                     }
                 }
+                .accessibilityIdentifier("picker-currency")
                 .pickerStyle(.segmented)
                 .padding(.horizontal)
                 .padding(.bottom)
@@ -61,11 +62,13 @@ struct CryptoListView: View {
                         List(coins, id: \.name) { coin in
                             CryptoCoinView(coin: coin)
                         }.listStyle(PlainListStyle())
+                            .accessibilityIdentifier("list-coin")
                     }
                 } else {
                     List($viewModel.searchedCoin, id:\.name) { coin in
                         CryptoCoinView(coin: coin.wrappedValue)
                     }.listStyle(PlainListStyle())
+                        .accessibilityIdentifier("list-search")
                 }
             }
             .frame(minWidth: 0,

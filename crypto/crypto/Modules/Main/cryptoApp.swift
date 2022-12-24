@@ -11,7 +11,6 @@ import CryptoSDK
 @main
 struct cryptoApp: App {
     
-    @Environment(\.scenePhase) private var scenePhase
     @ObservedObject var viewModel: CryptoViewmodel
     
     init() {
@@ -27,20 +26,6 @@ struct cryptoApp: App {
     var body: some Scene {
         WindowGroup {
             CryptoListView(viewModel: self.viewModel)
-        }
-        .onChange(of: scenePhase) { phase in
-            switch phase {
-            case .background:
-                //Stop timer
-                break
-            case .active:
-                //Start timer
-                break
-            case .inactive:
-                //Stop timer
-                break
-            default: break
-            }
         }
     }
 }

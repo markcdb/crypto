@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		8AC71BD02955233F000BD505 /* CryptoCoinView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC71BCF2955233F000BD505 /* CryptoCoinView.swift */; };
 		8AC71C0D2955AB97000BD505 /* CryptoSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AC71C052955AB96000BD505 /* CryptoSDK.framework */; };
-		8AC71C142955AB97000BD505 /* CryptoSDKTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC71C132955AB97000BD505 /* CryptoSDKTests.swift */; };
 		8AC71C152955AB97000BD505 /* CryptoSDK.h in Headers */ = {isa = PBXBuildFile; fileRef = 8AC71C072955AB96000BD505 /* CryptoSDK.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8AC71C182955AB97000BD505 /* CryptoSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AC71C052955AB96000BD505 /* CryptoSDK.framework */; };
 		8AC71C192955AB97000BD505 /* CryptoSDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8AC71C052955AB96000BD505 /* CryptoSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -40,13 +39,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		8AC71BEF2955AB6F000BD505 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 8AE2FDCC2952060100FD03A3 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 8AE2FDD32952060100FD03A3;
-			remoteInfo = crypto;
-		};
 		8AC71C0E2955AB97000BD505 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 8AE2FDCC2952060100FD03A3 /* Project object */;
@@ -103,11 +95,9 @@
 		8AC71BD129553490000BD505 /* MockNetwork.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockNetwork.swift; sourceTree = "<group>"; };
 		8AC71BD4295567E8000BD505 /* ImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageView.swift; sourceTree = "<group>"; };
 		8AC71BDD29556F10000BD505 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
-		8AC71BEB2955AB6F000BD505 /* CryptoViewTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CryptoViewTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8AC71C052955AB96000BD505 /* CryptoSDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CryptoSDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8AC71C072955AB96000BD505 /* CryptoSDK.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CryptoSDK.h; sourceTree = "<group>"; };
 		8AC71C0C2955AB97000BD505 /* CryptoSDKTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CryptoSDKTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		8AC71C132955AB97000BD505 /* CryptoSDKTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoSDKTests.swift; sourceTree = "<group>"; };
 		8AC71C342956C632000BD505 /* FilterHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterHeaderView.swift; sourceTree = "<group>"; };
 		8AE2FDD42952060100FD03A3 /* crypto.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = crypto.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8AE2FDD72952060100FD03A3 /* cryptoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = cryptoApp.swift; sourceTree = "<group>"; };
@@ -135,13 +125,6 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		8AC71BE82955AB6F000BD505 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		8AC71C022955AB96000BD505 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -198,7 +181,6 @@
 			children = (
 				8AE2FE20295466AC00FD03A3 /* Utilities */,
 				8AE2FE232954685A00FD03A3 /* CryptoViewmodelTest.swift */,
-				8AC71C132955AB97000BD505 /* CryptoSDKTests.swift */,
 			);
 			path = CryptoSDKTests;
 			sourceTree = "<group>";
@@ -229,7 +211,6 @@
 				8AE2FDD42952060100FD03A3 /* crypto.app */,
 				8AE2FDE42952060200FD03A3 /* cryptoTests.xctest */,
 				8AE2FDEE2952060200FD03A3 /* cryptoUITests.xctest */,
-				8AC71BEB2955AB6F000BD505 /* CryptoViewTests.xctest */,
 				8AC71C052955AB96000BD505 /* CryptoSDK.framework */,
 				8AC71C0C2955AB97000BD505 /* CryptoSDKTests.xctest */,
 			);
@@ -371,24 +352,6 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		8AC71BEA2955AB6F000BD505 /* CryptoViewTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 8AC71BFD2955AB70000BD505 /* Build configuration list for PBXNativeTarget "CryptoViewTests" */;
-			buildPhases = (
-				8AC71BE72955AB6F000BD505 /* Sources */,
-				8AC71BE82955AB6F000BD505 /* Frameworks */,
-				8AC71BE92955AB6F000BD505 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				8AC71BF02955AB6F000BD505 /* PBXTargetDependency */,
-			);
-			name = CryptoViewTests;
-			productName = CryptoViewTests;
-			productReference = 8AC71BEB2955AB6F000BD505 /* CryptoViewTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 		8AC71C042955AB96000BD505 /* CryptoSDK */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8AC71C1A2955AB97000BD505 /* Build configuration list for PBXNativeTarget "CryptoSDK" */;
@@ -491,10 +454,6 @@
 				LastSwiftUpdateCheck = 1410;
 				LastUpgradeCheck = 1410;
 				TargetAttributes = {
-					8AC71BEA2955AB6F000BD505 = {
-						CreatedOnToolsVersion = 14.1;
-						TestTargetID = 8AE2FDD32952060100FD03A3;
-					};
 					8AC71C042955AB96000BD505 = {
 						CreatedOnToolsVersion = 14.1;
 					};
@@ -531,7 +490,6 @@
 				8AE2FDD32952060100FD03A3 /* crypto */,
 				8AE2FDE32952060200FD03A3 /* cryptoTests */,
 				8AE2FDED2952060200FD03A3 /* cryptoUITests */,
-				8AC71BEA2955AB6F000BD505 /* CryptoViewTests */,
 				8AC71C042955AB96000BD505 /* CryptoSDK */,
 				8AC71C0B2955AB97000BD505 /* CryptoSDKTests */,
 			);
@@ -539,13 +497,6 @@
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		8AC71BE92955AB6F000BD505 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		8AC71C032955AB96000BD505 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -587,13 +538,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		8AC71BE72955AB6F000BD505 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		8AC71C012955AB96000BD505 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -616,7 +560,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8AC71C142955AB97000BD505 /* CryptoSDKTests.swift in Sources */,
 				8AC71C332955AF0C000BD505 /* Extensions.swift in Sources */,
 				8AC71C322955AF06000BD505 /* CryptoViewmodelTest.swift in Sources */,
 			);
@@ -655,11 +598,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		8AC71BF02955AB6F000BD505 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 8AE2FDD32952060100FD03A3 /* crypto */;
-			targetProxy = 8AC71BEF2955AB6F000BD505 /* PBXContainerItemProxy */;
-		};
 		8AC71C0F2955AB97000BD505 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 8AC71C042955AB96000BD505 /* CryptoSDK */;
@@ -688,42 +626,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		8AC71BFE2955AB70000BD505 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = DLGS83ZQ66;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.mark.CryptoViewTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/crypto.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/crypto";
-			};
-			name = Debug;
-		};
-		8AC71BFF2955AB70000BD505 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = DLGS83ZQ66;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.mark.CryptoViewTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/crypto.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/crypto";
-			};
-			name = Release;
-		};
 		8AC71C1B2955AB97000BD505 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1075,15 +977,6 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		8AC71BFD2955AB70000BD505 /* Build configuration list for PBXNativeTarget "CryptoViewTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				8AC71BFE2955AB70000BD505 /* Debug */,
-				8AC71BFF2955AB70000BD505 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		8AC71C1A2955AB97000BD505 /* Build configuration list for PBXNativeTarget "CryptoSDK" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
